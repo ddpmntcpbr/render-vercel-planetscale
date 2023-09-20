@@ -6,11 +6,26 @@ default: &default
   encoding: utf8mb4
   collation: utf8mb4_general_ci
 
+# development:
+#   <<: *default
+#   database: myapp
+#   username: <%= Rails.application.credentials.db.username %>
+#   host: <%= Rails.application.credentials.db.host %>
+#   password: <%= Rails.application.credentials.db.password %>
+#   ssl_mode: verify_identity
+#   sslca: "/etc/ssl/cert.pem"
+
 development:
   <<: *default
-  database: myapp
+  host: db
+  database: myapp_development
+  password: password
+
+production:
+  <<: *default
+  database: render-vercel-planetscale-prod
   username: <%= Rails.application.credentials.db.username %>
   host: <%= Rails.application.credentials.db.host %>
   password: <%= Rails.application.credentials.db.password %>
   ssl_mode: verify_identity
-  sslca: "/etc/ssl/cert.pem"
+  sslca: "/etc/ssl/certs/ca-certificates.crt"
