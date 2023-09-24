@@ -10,8 +10,8 @@ echo "Start rails/bin/render-build.sh"
 echo "bundle install"
 bundle install
 
-echo "bundle exec rails db:create"
-bundle exec rails db:create
+# echo "bundle exec rails db:create"
+# bundle exec rails db:create
 
 echo "bundle exec rails db:migrate"
 bundle exec rails db:migrate
