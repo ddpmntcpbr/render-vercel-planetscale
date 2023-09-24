@@ -8,7 +8,7 @@ type PostProps = {
 }
 
 const Index: NextPage = () => {
-  const url = 'http://localhost:3000/api/v1/posts'
+  const url = process.env.NEXT_PUBLIC_API_BASE_URL + '/posts'
   const { data, error } = useSWR(url, fetcher)
 
   if (error) return <div>An error has occurred.</div>

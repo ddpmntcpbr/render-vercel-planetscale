@@ -2,6 +2,19 @@
 # exit on error
 set -o errexit
 
+put "Start rails/bin/render-build.sh"
+
+put "cd rails"
 cd rails
+
+put "bundle install"
 bundle install
-bundle exec rake db:migrate
+
+put "bundle exec rails db:create"
+bundle exec rails db:create
+
+put "bundle exec rails db:migrate"
+bundle exec rails db:migrate
+
+put "bundle exec rails db:seed"
+bundle exec rails db:seed
