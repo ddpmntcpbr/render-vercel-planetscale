@@ -16,5 +16,5 @@ bundle install
 echo "bundle exec rails db:migrate"
 bundle exec rails db:migrate
 
-echo "bundle exec rails db:seed"
-bundle exec rails db:seed
+# echo "bundle exec rails db:seed"
+# bundle exec rails db:seed
